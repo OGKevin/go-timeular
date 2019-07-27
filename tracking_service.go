@@ -23,7 +23,7 @@ type TimeularTime struct {
 
 func (t *TimeularTime) MarshalJSON() ([]byte, error) {
 	if t.IsZero() {
-		return []byte(strconv.Quote("null")), nil
+		return []byte("null"), nil
 	}
 
 	return []byte(strconv.Quote(t.Format(timeFormat))), nil
